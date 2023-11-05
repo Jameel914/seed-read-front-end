@@ -43,24 +43,89 @@ function ShowPage() {
   return (
     <div>
       <div>
-        <h2>Show</h2>
-      </div>
-      <div>
-        <h2>
-          {single.is_favorite ? <span>🔥</span> : <span>{""}</span>}{" "}
-          {single.name} - By {single.artist}
+        <h2
+          style={{
+            display: "flex",
+            position: "relative",
+            margin: "150px 0px 0px 0px",
+          }}
+        >
+          Show
         </h2>
       </div>
-      <div>
-        <p>{single.album}</p>
+      <div
+        style={{
+          border: "1px solid blue",
+          margin: "10px",
+          width: "40%",
+          paddingLeft: "20px",
+        }}
+      >
+        <div>
+          <h2>
+            {single.is_favorite ? <span>🔥</span> : <span>{""}</span>}{" "}
+            {single.name} - By {single.artist}
+          </h2>
+        </div>
+        <div>
+          <h4>{single.album}</h4>
+        </div>
+        <div>
+          <p>Time: {single.time}</p>
+        </div>
       </div>
-      <div>
-        <p>time</p>
-      </div>
-      <div>
-        <button onClick={backButton}>BACK</button>
-        <button onClick={editButton}>EDIT</button>
-        <button onClick={deleteButton}>DELETE</button>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          padding: "30px",
+        }}
+      >
+        <button
+          onClick={backButton}
+          style={{
+            backgroundColor: "blue",
+            border: "none",
+            color: "white",
+            padding: "15px 32px",
+            textAlign: "center",
+            textDecoration: "none",
+            display: "inline-block",
+            fontSize: "16px",
+          }}
+        >
+          BACK
+        </button>
+        <button
+          onClick={editButton}
+          style={{
+            backgroundColor: "blue",
+            border: "none",
+            color: "white",
+            padding: "15px 32px",
+            textAlign: "center",
+            textDecoration: "none",
+            display: "inline-block",
+            fontSize: "16px",
+          }}
+        >
+          EDIT
+        </button>
+        <button
+          onClick={deleteButton}
+          style={{
+            backgroundColor: "blue",
+            border: "none",
+            color: "white",
+            padding: "15px 32px",
+            textAlign: "center",
+            textDecoration: "none",
+            display: "inline-block",
+            fontSize: "16px",
+          }}
+        >
+          DELETE
+        </button>
       </div>
     </div>
   );

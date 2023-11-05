@@ -33,7 +33,16 @@ function IndexPage() {
         <h2>Index</h2>
         <button
           onClick={newSongButton}
-          style={{ margin: "20px", color: "blue" }}
+          style={{
+            backgroundColor: "blue",
+            border: "none",
+            color: "white",
+            padding: "15px 25px",
+            textAlign: "center",
+            textDecoration: "none",
+            display: "inline-block",
+            fontSize: "16px",
+          }}
         >
           NEW SONG
         </button>
@@ -41,7 +50,7 @@ function IndexPage() {
       <div className="table-container">
         <table className="table">
           <tbody>
-            <tr>
+            <tr style={{ fontSize: "30px" }}>
               <th>Fav</th>
               <th>Song</th>
               <th>Artist</th>
@@ -56,13 +65,19 @@ function IndexPage() {
                     </Link>
                   </td>
                   <td>
-                    <Link to={`/songs/${item.id}`}>{item.name}</Link>
+                    <Link to={`/songs/${item.id}`} style={{ color: "black" }}>
+                      {item.name}
+                    </Link>
                   </td>
                   <td>
-                    <Link to={`/songs/${item.id}`}>{item.artist}</Link>
+                    <Link to={`/songs/${item.id}`} style={{ color: "black" }}>
+                      {item.artist}
+                    </Link>
                   </td>
                   <td>
-                    <Link to={`/songs/${item.id}`}>{item.time}</Link>
+                    <Link to={`/songs/${item.id}`} style={{ color: "black" }}>
+                      {item.time}
+                    </Link>
                   </td>
                 </tr>
               );
