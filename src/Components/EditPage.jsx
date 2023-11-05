@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import "./EditPage.css";
 
 function EditPage() {
   const API = import.meta.env.VITE_API_URL;
@@ -48,11 +49,11 @@ function EditPage() {
   }
   return (
     <>
-      <div>
+      <div className="edit">
         <h2>Edit</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="name-input">
           <label>Song Name</label>
           <input
             type="text"
@@ -60,7 +61,7 @@ function EditPage() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div>
+        <div className="artist-input">
           <label>Artist</label>
           <input
             type="text"
@@ -68,7 +69,7 @@ function EditPage() {
             onChange={(e) => setArtist(e.target.value)}
           />
         </div>
-        <div>
+        <div className="album-input">
           <label>Album</label>
           <input
             type="text"
@@ -76,7 +77,7 @@ function EditPage() {
             onChange={(e) => setAlbum(e.target.value)}
           />
         </div>
-        <div>
+        <div className="time-input">
           <label>Time</label>
           <input
             type="text"
@@ -84,7 +85,7 @@ function EditPage() {
             onChange={(e) => setTime(e.target.value)}
           />
         </div>
-        <div>
+        <div className="favortie">
           <label>Favorite</label>
           <input
             type="checkbox"
@@ -92,7 +93,7 @@ function EditPage() {
             onChange={(e) => setIs_favorite(e.target.checked)}
           />
         </div>
-        <div>
+        <div className="button">
           <button type="submit">Submit</button>
         </div>
       </form>
