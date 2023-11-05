@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./NewPage.css";
+import { useNavigate } from "react-router-dom";
 
 function NewPage() {
   const API = import.meta.env.VITE_API_URL;
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [artist, setArtist] = useState("");
@@ -21,6 +24,7 @@ function NewPage() {
         is_favorite: is_favorite,
       });
       console.log(result);
+      navigate("/songs");
     } catch (error) {
       console.log(error);
     }
@@ -28,11 +32,11 @@ function NewPage() {
 
   return (
     <>
-      <div>
+      <div className="new">
         <h2>New</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="name-input">
           <label>Song Name</label>
           <input
             type="text"
@@ -40,7 +44,7 @@ function NewPage() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div>
+        <div className="artist-input">
           <label>Artist</label>
           <input
             type="text"
@@ -48,7 +52,7 @@ function NewPage() {
             onChange={(e) => setArtist(e.target.value)}
           />
         </div>
-        <div>
+        <div className="album-input">
           <label>Album</label>
           <input
             type="text"
@@ -56,7 +60,7 @@ function NewPage() {
             onChange={(e) => setAlbum(e.target.value)}
           />
         </div>
-        <div>
+        <div className="time-input">
           <label>Time</label>
           <input
             type="text"
@@ -64,7 +68,7 @@ function NewPage() {
             onChange={(e) => setTime(e.target.value)}
           />
         </div>
-        <div>
+        <div className="favortie">
           <label>Favorite</label>
           <input
             type="checkbox"
@@ -72,7 +76,10 @@ function NewPage() {
             onChange={(e) => setIs_favorite(e.target.checked)}
           />
         </div>
-        <button type="submit">Submit</button>
+
+        <div className="button">
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </>
   );

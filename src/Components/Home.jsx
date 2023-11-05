@@ -10,7 +10,6 @@ function Home() {
   }
   return (
     <div>
-      <h2 onClick={welcome}>Welcome to the songs app!</h2>
       <IndexPage />
     </div>
   );

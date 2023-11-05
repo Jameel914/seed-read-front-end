@@ -1,0 +1,37 @@
+.new {
+  display: flex;
+  padding-left: 20px;
+  position: relative;
+  margin: 150px 0px 0px 0px;
+}
+
+.name-input,
+.artist-input,
+.album-input,
+.time-input {
+  display: grid;
+  gap: 8px;
+  max-width: 400px;
+  row-gap: 15px;
+  padding: 15px 20px;
+  color: blue;
+  font-weight: bold;
+}
+
+.favortie {
+  padding: 15px 20px;
+  color: blue;
+  font-weight: bold;
+}
+
+.button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  max-width: fit-content;
+}
