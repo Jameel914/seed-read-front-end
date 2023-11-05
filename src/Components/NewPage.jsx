@@ -4,21 +4,21 @@ import axios from "axios";
 function NewPage() {
   const API = import.meta.env.VITE_API_URL;
 
-  const [songName, setSongName] = useState("");
+  const [name, setName] = useState("");
   const [artist, setArtist] = useState("");
   const [album, setAlbum] = useState("");
   const [time, setTime] = useState("");
-  const [favorite, setFavorite] = useState(false);
+  const [is_favorite, setIs_favorite] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
       let result = await axios.post(`${API}/songs`, {
-        songName: songName,
+        name: name,
         artist: artist,
         album: album,
         time: time,
-        favorite: favorite,
+        is_favorite: is_favorite,
       });
       console.log(result);
     } catch (error) {
@@ -36,8 +36,8 @@ function NewPage() {
           <label>Song Name</label>
           <input
             type="text"
-            value={songName}
-            onChange={(e) => setSongName(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div>
@@ -68,8 +68,8 @@ function NewPage() {
           <label>Favorite</label>
           <input
             type="checkbox"
-            checked={favorite}
-            onChange={(e) => setFavorite(e.target.checked)}
+            checked={is_favorite}
+            onChange={(e) => setIs_favorite(e.target.checked)}
           />
         </div>
         <button type="submit">Submit</button>
