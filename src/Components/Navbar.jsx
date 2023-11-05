@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -7,7 +8,11 @@ function Navbar() {
   function navigateToSongs() {
     navigate("/songs");
   }
-  return <h1 onClick={navigateToSongs}>Tuner</h1>;
+  return (
+    <div className="navbar">
+      <h1 onClick={navigateToSongs}>Tuner</h1>
+    </div>
+  );
 }
 
 export default Navbar;
