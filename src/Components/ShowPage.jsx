@@ -32,7 +32,7 @@ function ShowPage() {
 
   async function deleteButton() {
     try {
-      let result = await axios.get(`${API}/songs/${id}`);
+      let result = await axios.delete(`${API}/songs/${id}`);
       console.log(result);
       navigate("/songs");
     } catch (error) {
