@@ -23,7 +23,7 @@ function NewPage() {
         time: time,
         is_favorite: is_favorite,
       });
-      console.log(result);
+      //console.log(result);
       navigate("/songs");
     } catch (error) {
       console.log(error);

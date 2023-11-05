@@ -15,7 +15,7 @@ function ShowPage() {
   async function fetchSingle() {
     try {
       let result = await axios.get(`${API}/songs/${id}`);
-      console.log(result.data);
+      //console.log(result.data);
       setSingle(result.data);
     } catch (error) {
       console.log(error);
@@ -33,7 +33,7 @@ function ShowPage() {
   async function deleteButton() {
     try {
       let result = await axios.delete(`${API}/songs/${id}`);
-      console.log(result);
+      //console.log(result);
       navigate("/songs");
     } catch (error) {
       console.log(error);

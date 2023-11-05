@@ -21,7 +21,7 @@ function EditPage() {
   async function editSong() {
     try {
       let result = await axios.get(`${API}/songs/${id}`);
-      console.log(result.data);
+      //console.log(result.data);
       setName(result.data.name);
       setArtist(result.data.artist);
       setAlbum(result.data.album);

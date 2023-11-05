@@ -16,7 +16,7 @@ function IndexPage() {
   async function fetchShow() {
     try {
       let result = await axios.get(`${API}/songs`);
-      console.log(result.data);
+      //console.log(result.data);
       setShow(result.data);
     } catch (error) {
       console.log(error);
