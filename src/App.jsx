@@ -6,7 +6,6 @@ import NewPage from "./Components/NewPage";
 import ShowPage from "./Components/ShowPage";
 import PageNotFound from "./Components/PageNotFound";
 import Home from "./Components/Home";
-import "./App.css";
 
 function App() {
   return (

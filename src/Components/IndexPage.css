@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  margin: 150px 0px 0px 0px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 70px 0px 0px 0px;
+  font-weight: bold;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  align-items: center;
+}
+
+th {
+  color: blue;
+  padding: 30px;
+}
+
+.table {
+  background-color: rgb(169, 216, 246);
+}
