@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function IndexPage() {
   const [show, setShow] = useState([]);
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
+  const { id } = useParams();
 
   useEffect(() => {
     fetchShow();
@@ -25,22 +26,6 @@ function IndexPage() {
     navigate("/songs/new");
   }
 
-  function isFavoriteLink() {
-    navigate("/songs/:id");
-  }
-
-  function nameLink() {
-    navigate("/songs/:id");
-  }
-
-  function artistLink() {
-    navigate("/songs/:id");
-  }
-
-  function timeLink() {
-    navigate("/songs/:id");
-  }
-
   return (
     <div>
       <h2>Index</h2>
@@ -56,12 +41,20 @@ function IndexPage() {
           {show.map((item, index) => {
             return (
               <tr key={index}>
-                <td onClick={isFavoriteLink}>
-                  {item.is_favorite ? <span>🔥</span> : <span>{""}</span>}
+                <td>
+                  <Link to={`/songs/${item.id}`}>
+                    {item.is_favorite ? <span>🔥</span> : <span>{""}</span>}
+                  </Link>
                 </td>
-                <td onClick={nameLink}>{item.name}</td>
-                <td onClick={artistLink}>{item.artist}</td>
-                <td onClick={timeLink}>{item.time}</td>
+                <td>
+                  <Link to={`/songs/${item.id}`}>{item.name}</Link>
+                </td>
+                <td>
+                  <Link to={`/songs/${item.id}`}>{item.artist}</Link>
+                </td>
+                <td>
+                  <Link to={`/songs/${item.id}`}>{item.time}</Link>
+                </td>
               </tr>
             );
           })}
